@@ -251,232 +251,41 @@
     font-size: 1.125rem;
 }
 
+.budget-vs-actual-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;
+}
+
+.bva-percentage {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    line-height: 1;
+}
+
+.bva-label {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-top: 0.25rem;
+}
+
 @media (max-width: 768px) {
     .dashboard-header {
-        .stat-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-        }
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
 
-        .stat-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: var(--radius-lg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
+    .page-title {
+        font-size: 1.5rem;
+    }
 
-        .stat-icon.balance {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(99, 102, 241, 0.05) 100%);
-            color: var(--color-primary);
-        }
-
-        .stat-icon.income {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0.05) 100%);
-            color: var(--color-success);
-        }
-
-        .stat-icon.expense {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0.2) 0%, rgba(239, 68, 68, 0.05) 100%);
-            color: var(--color-danger);
-        }
-
-        .stat-content {
-            flex: 1;
-        }
-
-        .stat-label {
-            font-size: 0.875rem;
-            color: var(--color-text-tertiary);
-            margin-bottom: var(--spacing-xs);
-        }
-
-        .stat-value {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--color-text-primary);
-        }
-
-        .income-text {
-            color: var(--color-success);
-        }
-
-        .expense-text {
-            color: var(--color-danger);
-        }
-
-        .charts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: var(--spacing-lg);
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .chart-card,
-        .budget-card {
-            padding: var(--spacing-xl);
-        }
-
-        .chart-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--color-text-primary);
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .chart-container {
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .empty-state {
-            text-align: center;
-            color: var(--color-text-muted);
-            padding: var(--spacing-xl);
-        }
-
-        .budget-list {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-lg);
-        }
-
-        .budget-item {
-            padding: var(--spacing-md);
-            background: var(--color-bg-tertiary);
-            border-radius: var(--radius-md);
-            transition: all var(--transition-base);
-        }
-
-        .budget-item:hover {
-            background: var(--color-bg-card-hover);
-        }
-
-        .budget-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .budget-name {
-            font-weight: 600;
-            color: var(--color-text-primary);
-        }
-
-        .budget-amount {
-            font-size: 0.875rem;
-            color: var(--color-text-tertiary);
-        }
-
-        .budget-bar {
-            height: 8px;
-            background: var(--color-bg-primary);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            margin-bottom: var(--spacing-xs);
-        }
-
-        .budget-progress {
-            height: 100%;
-            border-radius: var(--radius-lg);
-            transition: width var(--transition-slow);
-        }
-
-        .budget-percentage {
-            font-size: 0.75rem;
-            color: var(--color-text-muted);
-        }
-
-        .recent-transactions {
-            padding: var(--spacing-xl);
-        }
-
-        .transaction-preview-list {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-md);
-        }
-
-        .transaction-preview-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: var(--spacing-md);
-            background: var(--color-bg-tertiary);
-            border-radius: var(--radius-md);
-            transition: all var(--transition-base);
-        }
-
-        .transaction-preview-item:hover {
-            background: var(--color-bg-card-hover);
-            transform: translateX(4px);
-        }
-
-        .transaction-preview-info {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-md);
-        }
-
-        .transaction-preview-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-
-        .transaction-preview-desc {
-            font-weight: 600;
-            color: var(--color-text-primary);
-            margin-bottom: 2px;
-        }
-
-        .transaction-preview-cat {
-            font-size: 0.875rem;
-            color: var(--color-text-tertiary);
-        }
-
-        .transaction-preview-amount {
-            font-weight: 700;
-            font-size: 1.125rem;
-        }
-
-        @media (max-width: 768px) {
-            .dashboard-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: var(--spacing-md);
-            }
-
-            .stats-grid,
-            .charts-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .budget-vs-actual-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            pointer-events: none;
-        }
-
-        .bva-percentage {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--color-text-primary);
-            line-height: 1;
-        }
-
-        .bva-label {
-            font-size: 0.875rem;
-            color: var(--color-text-muted);
-            margin-top: 0.25rem;
-        }
+    .stats-grid,
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+}
