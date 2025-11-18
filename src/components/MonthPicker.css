@@ -1,0 +1,41 @@
+.month-picker {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: var(--color-bg-tertiary);
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--glass-border);
+}
+
+.picker-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    background: transparent;
+    transition: all var(--transition-base);
+}
+
+.picker-btn:hover {
+    background: var(--color-bg-card-hover);
+    color: var(--color-text-primary);
+}
+
+.current-month {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 0 var(--spacing-md);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    min-width: 160px;
+    justify-content: center;
+}
+
+.current-month svg {
+    color: var(--color-primary);
+}
